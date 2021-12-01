@@ -7,6 +7,7 @@ export class CurrencyPipe implements PipeTransform{
         let symbole=""
         let valeur=0
         let display=false
+        let k=3
         if(symbole==""){
             display=true
             if(deviseArrive=="USD"){
@@ -18,17 +19,17 @@ export class CurrencyPipe implements PipeTransform{
             }
 
             if(deviseDebart=="FCFA" && deviseArrive=="USD"){
-                valeur=(parseFloat(value)/655.9570)*1.134122
+                valeur=parseFloat(((parseFloat(value)/655.9570)*1.134122).toPrecision(k))
             }else if(deviseDebart=="FCFA" && deviseArrive=="EUR"){
-                valeur=parseFloat(value)/655.9570
+                valeur=parseFloat((parseFloat(value)/655.9570).toPrecision(k))
             }else if(deviseDebart=="EUR" && deviseArrive=="USD"){
-                valeur=parseFloat(value)*1.134122
+                valeur=parseFloat((parseFloat(value)*1.134122).toPrecision(k))
             }else if(deviseDebart=="EUR" && deviseArrive=="FCFA"){
-                valeur=parseFloat(value)*655.9570
+                valeur=parseFloat((parseFloat(value)*655.9570).toPrecision(k))
             }else if(deviseDebart=="USD" && deviseArrive=="FCFA"){
-                valeur=(parseFloat(value)/1.134122)*655.9570
+                valeur=parseFloat(((parseFloat(value)/1.134122)*655.9570).toPrecision(k))
             }else if(deviseDebart=="USD" && deviseArrive=="EUR"){
-                valeur=(parseFloat(value))/1.134122
+                valeur=parseFloat(((parseFloat(value))/1.134122).toPrecision(k))
             }else if(deviseDebart=="EUR" && deviseArrive=="EUR"){
                 valeur=parseFloat(value)
             }else if(deviseDebart=="USD" && deviseArrive=="USD"){
