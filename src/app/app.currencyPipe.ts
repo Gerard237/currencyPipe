@@ -18,17 +18,17 @@ export class CurrencyPipe implements PipeTransform{
             }
 
             if(deviseDebart=="FCFA" && deviseArrive=="USD"){
-                valeur=parseFloat(value)/550
+                valeur=(parseFloat(value)/655.9570)*1.134122
             }else if(deviseDebart=="FCFA" && deviseArrive=="EUR"){
-                valeur=parseFloat(value)/650
+                valeur=parseFloat(value)/655.9570
             }else if(deviseDebart=="EUR" && deviseArrive=="USD"){
-                valeur=(parseFloat(value)*650)/550
+                valeur=parseFloat(value)*1.134122
             }else if(deviseDebart=="EUR" && deviseArrive=="FCFA"){
-                valeur=parseFloat(value)*650
+                valeur=parseFloat(value)*655.9570
             }else if(deviseDebart=="USD" && deviseArrive=="FCFA"){
-                valeur=parseFloat(value)*550
+                valeur=(parseFloat(value)/1.134122)*655.9570
             }else if(deviseDebart=="USD" && deviseArrive=="EUR"){
-                valeur=(parseFloat(value)*550)/650
+                valeur=(parseFloat(value))/1.134122
             }else if(deviseDebart=="EUR" && deviseArrive=="EUR"){
                 valeur=parseFloat(value)
             }else if(deviseDebart=="USD" && deviseArrive=="USD"){
